@@ -6,7 +6,7 @@
       okta_users:
         action: list
         organization: leoconnect
-        api_key: 008ZJ34_gPsZk0pertZqamOERjpGm7VV6pJNn8hZCW
+        api_key: here is api key
       register: okta_users
     - name: Print Users
       debug:
