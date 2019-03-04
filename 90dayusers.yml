@@ -13,4 +13,4 @@
     register: reqoutput
   - name: Display Users
     debug:
-      var: reqoutput
+      var: reqoutput.json[2].lastlogin
