@@ -1,0 +1,13 @@
+---
+- name: Query Okta for users inactive for 90 days
+  hosts: localhost
+  tasks:
+    - name: List Okta Users
+      okta_users:
+        action: list
+        organization: leoconnect
+        api_key: 008ZJ34_gPsZk0pertZqamOERjpGm7VV6pJNn8hZCW
+      register: okta_users
+    - name: Print Users
+      debug:
+        msg: "{{ okta_users.json }}"

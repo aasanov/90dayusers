@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Check users that have been inactive for 90 days
+    uri:
+      url: "https://leoconnect-admin.okta.com/api/v1/users?filter=status%20eq%20%22ACTIVE%22"
+      method: GET
+      return_content: yes
+      headers:
+        Accept: "application/json"
+        Content-Type: "application/json"
+        Authorization: "SSWS 008ZJ34_gPsZk0pertZqamOERjpGm7VV6pJNn8hZCW"
+    register: reqoutput
+  - name: Display Users
+    debug:
+      var: reqoutput
